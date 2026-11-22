@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f5f2">
+  <title>Welcome — Northstar</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <section class="welcome-panel" aria-label="Welcome">
+      <a class="brand" href="#" aria-label="Northstar home"><span class="brand-mark">✳</span> northstar</a>
+      <div class="welcome-copy">
+        <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEXT CHAPTER STARTS HERE</div>
+        <h1>Make room<br>for <span>what’s next.</span></h1>
+        <p>A calmer place to focus, find your rhythm, and make progress on the things that matter.</p>
+      </div>
+      <div class="quote-card">
+        <div class="quote-stars">★★★★★</div>
+        <blockquote>“It’s the first time my plans actually feel like they belong to me.”</blockquote>
+        <div class="quote-person"><div class="avatar">JM</div><div><strong>Jordan M.</strong><small>Member since 2023</small></div></div>
+      </div>
+      <div class="panel-footer"><span>Thoughtfully made for your everyday.</span><span>© 2025 Northstar</span></div>
+      <div class="decoration decoration-one"></div><div class="decoration decoration-two"></div>
+    </section>
+
+    <section class="form-panel">
+      <div class="mobile-brand"><span class="brand-mark">✳</span> northstar</div>
+      <div class="form-wrap">
+        <div id="auth-view">
+          <div class="form-heading">
+            <div class="eyebrow" id="form-eyebrow">GOOD TO HAVE YOU</div>
+            <h2 id="form-title">Welcome back</h2>
+            <p id="form-subtitle">Pick up right where you left off.</p>
+          </div>
+          <div class="tabs" role="tablist" aria-label="Account access">
+            <button class="tab active" id="login-tab" role="tab" aria-selected="true" type="button">Log in</button>
+            <button class="tab" id="signup-tab" role="tab" aria-selected="false" type="button">Create account</button>
+          </div>
+          <div id="notice" class="notice" role="status" aria-live="polite"></div>
+          <form id="auth-form" novalidate>
+            <div class="field" id="name-field" hidden>
+              <label for="name">Your name</label>
+              <input id="name" name="name" type="text" autocomplete="name" placeholder="e.g. Alex Morgan">
+            </div>
+            <div class="field">
+              <label for="email">Email address</label>
+              <input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com" required>
+            </div>
+            <div class="field">
+              <div class="label-row"><label for="password">Password</label><a id="forgot-link" href="#">Forgot password?</a></div>
+              <div class="password-wrap"><input id="password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required><button id="toggle-password" class="show-password" type="button" aria-label="Show password">Show</button></div>
+            </div>
+            <div class="field" id="confirm-field" hidden>
+              <label for="confirm-password">Confirm password</label>
+              <input id="confirm-password" name="confirm-password" type="password" autocomplete="new-password" placeholder="Enter your password again">
+            </div>
+            <button class="submit-button" id="submit-button" type="submit">Log in <span>→</span></button>
+          </form>
+          <p class="switch-copy" id="switch-copy">New to Northstar? <button type="button" data-mode="signup">Create an account</button></p>
+          <p class="terms-copy" id="terms-copy" hidden>By creating an account, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+          <div class="secure-note"><span>⌑</span> Your information stays private and secure</div>
+        </div>
+        <div id="account-view" hidden>
+          <header class="app-header">
+            <a class="app-brand" href="#home"><span class="brand-mark">✳</span> northstar</a>
+            <nav class="app-nav" aria-label="Main navigation">
+              <button class="nav-link active" data-page="home" type="button">Home</button>
+              <button class="nav-link" data-page="new" type="button">New entry</button>
+              <button class="nav-link" data-page="entries" type="button">My entries</button>
+            </nav>
+            <button class="nav-logout" id="logout-button" type="button">Log out</button>
+          </header>
+          <div class="home-content">
+            <section class="page-view" id="home-page">
+              <div class="eyebrow">YOUR NORTHSTAR SPACE</div>
+              <h2 id="account-title">Welcome in</h2>
+              <p id="account-subtitle">You’re signed in and ready to go.</p>
+              <div class="home-card">
+                <div class="card-icon">✎</div><div><h3>Make a little progress</h3><p>Capture a thought, a goal, or something you want to remember.</p></div>
+                <button class="inline-action" data-page="new" type="button">Create an entry <span>→</span></button>
+              </div>
+              <div class="home-tip"><span>✳</span><div><strong>Your space, your pace</strong><p>Entries are saved in this browser, so you can come back to them any time.</p></div></div>
+            </section>
+            <section class="page-view" id="new-page" hidden>
+              <div class="eyebrow">A MOMENT FOR YOU</div><h2>New entry</h2><p>Put something you care about into words.</p>
+              <div id="entry-notice" class="notice" role="status" aria-live="polite"></div>
+              <form id="entry-form" class="entry-form">
+                <div class="field"><label for="entry-title">What’s on your mind?</label><input id="entry-title" name="title" type="text" placeholder="Give this entry a title" maxlength="80" required></div>
+                <div class="field"><label for="entry-category">Choose a category</label><select id="entry-category" name="category"><option>Personal</option><option>Work</option><option>Goals</option><option>Ideas</option></select></div>
+                <div class="field"><label for="entry-content">Your notes</label><textarea id="entry-content" name="content" rows="5" placeholder="Write a few words..." required></textarea></div>
+                <button class="submit-button" type="submit">Save entry <span>→</span></button>
+              </form>
+            </section>
+            <section class="page-view" id="entries-page" hidden>
+              <div class="eyebrow">WHAT YOU’VE CAPTURED</div><h2>My entries</h2><p>Your notes, all in one place.</p>
+              <div id="entry-list" class="entry-list"></div>
+              <button class="submit-button entries-cta" data-page="new" type="button">Create an entry <span>→</span></button>
+            </section>
+          </div>
+        </div>
+      </div>
+      <div class="mobile-footer">© 2025 Northstar <span>·</span> Thoughtfully made for your everyday.</div>
+    </section>
+  </main>
+  <script src="/app.js"></script>
+</body>
+</html>
